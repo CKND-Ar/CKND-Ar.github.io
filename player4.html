@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>حلقة 4 - الأسنان</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Arabic:wght@300..800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Playpen Sans Arabic',sans-serif;
+}
+
+body{
+    background:#000;
+    color:#fff;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#00bfff22;
+    border-radius:50%;
+    filter:blur(120px);
+    top:-100px;
+    right:-100px;
+    animation:float1 8s infinite alternate;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:400px;
+    height:400px;
+    background:#00ff8822;
+    border-radius:50%;
+    filter:blur(120px);
+    bottom:-100px;
+    left:-100px;
+    animation:float2 8s infinite alternate;
+}
+
+@keyframes float1{
+    from{transform:translateY(0);}
+    to{transform:translateY(80px);}
+}
+
+@keyframes float2{
+    from{transform:translateY(0);}
+    to{transform:translateY(-80px);}
+}
+
+.container{
+    width:95%;
+    max-width:900px;
+    text-align:center;
+    padding:30px 15px;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.title{
+    font-size:clamp(28px,5vw,45px);
+    margin-bottom:15px;
+    text-shadow:0 0 15px #00bfff;
+}
+
+.subtitle{
+    font-size:clamp(16px,3vw,22px);
+    margin-bottom:30px;
+    color:#ddd;
+}
+
+.servers{
+    display:flex;
+    justify-content:center;
+    gap:0;
+    margin-bottom:35px;
+    flex-wrap:wrap;
+}
+
+.server{
+    display:block;
+    width:280px;
+    overflow:hidden;
+    transition:.4s;
+    position:relative;
+}
+
+.server img{
+    width:100%;
+    display:block;
+}
+
+.server:hover{
+    transform:translateY(-8px) scale(1.04);
+    z-index:2;
+    filter:drop-shadow(0 0 20px #00bfff);
+}
+
+.download-btn{
+    display:inline-block;
+    padding:18px 55px;
+    border-radius:60px;
+    text-decoration:none;
+    color:#fff;
+    font-size:22px;
+    font-weight:bold;
+    background:linear-gradient(135deg,#00bfff,#00ff88);
+    box-shadow:
+    0 0 15px #00bfff,
+    0 0 35px #00ff88;
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.download-btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,.25);
+    transform:skewX(-25deg);
+    transition:.6s;
+}
+
+.download-btn:hover::before{
+    left:120%;
+}
+
+.download-btn:hover{
+    transform:scale(1.08);
+    box-shadow:
+    0 0 25px #00bfff,
+    0 0 55px #00ff88;
+}
+
+.download-btn:active{
+    transform:scale(.95);
+}
+
+.note{
+    margin-top:20px;
+    color:#aaa;
+    font-size:14px;
+}
+
+@media(max-width:650px){
+
+    .servers{
+        flex-direction:row;
+    }
+
+    .server{
+        width:48%;
+    }
+
+    .download-btn{
+        width:100%;
+        max-width:350px;
+        font-size:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 class="title">حلقة 4 - الأسنان</h1>
+
+    <div class="subtitle">
+        اختر سيرفر المشاهدة
+    </div>
+
+    <div class="servers">
+
+        <a class="server" href="https://ouo.io/wJqVol" target="_blank">
+            <img src="https://i.postimg.cc/Yq64HR2n/IMG-9933-res2tcj9vfyj8p10ihcytbm0bql9bsd2ejoynlnub4.jpg" alt="سيرفر 1">
+        </a>
+
+        <a class="server" href="https://ouo.io/92PrBE8" target="_blank">
+            <img src="https://i.postimg.cc/m2YcsjZv/IMG-9931-res2msls80zkakjps5dlxh5b80w4nrcfu3y375dnow.jpg" alt="سيرفر 2">
+        </a>
+
+    </div>
+
+    <a class="download-btn" href="https://frdl.io/srk3naybh0md/CKND_S1Ep4_-_الأسنان.mp4.html" target="_blank">
+        ⬇ تحميل الحلقة
+    </a>
+
+    <div class="note">
+        اختر السيرفر المناسب لك ثم استمتع بالمشاهدة
+    </div>
+
+</div>
+<script src="https://5gvci.com/act/files/tag.min.js?z=11153004" data-cfasync="false" async></script>
+	<script>(function(s){s.dataset.zone='11153018',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+	<script src="https://quge5.com/88/tag.min.js" data-zone="250189" async data-cfasync="false"></script>
+	<script src="https://quge5.com/88/tag.min.js" data-zone="250212" async data-cfasync="false"></script>
+</body>
+</html>
