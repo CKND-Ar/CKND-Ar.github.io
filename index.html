@@ -19,7 +19,7 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:'Mirza','Cairo',sans-serif;
+      font-family:'Cairo',sans-serif;
     }
 
     html{
@@ -31,7 +31,7 @@
       color:#fff;
       overflow-x:hidden;
       width:100%;
-      font-family:'Mirza','Cairo',sans-serif;
+      font-family:'Cairo',sans-serif;
     }
 
     img{
@@ -46,35 +46,39 @@
 
     /* HERO (FIXED QUALITY) */
 
-    .hero{
+    
+.hero{
       width:100%;
       min-height:100vh;
       position:relative;
       overflow:hidden;
-
       background:
-        linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.35)),
-        linear-gradient(to left,rgba(0,149,255,.20),rgba(0,0,0,.05)),
-        url('https://i.postimg.cc/Y0SF9mXG/download-(4).jpg');
-
+      radial-gradient(circle at top right, rgba(17,102,220,.55), transparent 35%),
+      linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.82)),
+      url('https://i.postimg.cc/Y0SF9mXG/download-(4).jpg');
       background-size:cover;
       background-position:center;
       background-repeat:no-repeat;
-
-      /* تحسين الإحساس بالجودة */
-      filter: contrast(1.08) saturate(1.1) brightness(0.98);
     }
 
-    /* تحسين بصري إضافي للخلفية */
-    .hero::before{
+
+    
+.hero::before{
       content:"";
       position:absolute;
       inset:0;
-      background:inherit;
-      filter: blur(0px) contrast(1.1);
-      transform: scale(1.02);
-      z-index:0;
+      background:linear-gradient(to left,rgba(17,102,220,.28),transparent 45%);
+      z-index:1;
     }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at center,transparent 35%,rgba(0,0,0,.35));
+      z-index:1;
+    }
+
 
     .hero-content{
       position:relative;
@@ -95,24 +99,30 @@
       width:100%;
     }
 
-    .hero-text h1{
-      font-size:clamp(42px,8vw,78px);
+    
+.hero-text h1{
+      font-size:clamp(55px,8vw,92px);
       font-weight:900;
-      margin-bottom:18px;
-      line-height:1.1;
+      margin-bottom:15px;
+      line-height:1.05;
+      text-shadow:0 4px 20px rgba(0,0,0,.55),0 0 40px rgba(17,102,220,.35);
     }
 
-    .hero-text h3{
-      font-size:clamp(20px,4vw,36px);
-      margin-bottom:35px;
+    
+.hero-text h3{
+      font-size:clamp(22px,4vw,34px);
+      margin-bottom:25px;
       font-weight:700;
+      color:#7cc4ff;
     }
 
-    .line{
-      width:100%;
-      height:2px;
-      background:#dadada;
-      margin-bottom:35px;
+    
+.line{
+      width:120px;
+      height:4px;
+      border-radius:999px;
+      background:linear-gradient(90deg,#1166dc,#6bb8ff);
+      margin-bottom:30px;
     }
 
     .hero-text p{
@@ -245,7 +255,24 @@
       transform:translateY(-2px) scale(1.05);
     }
 
-    ::-webkit-scrollbar{
+    
+.watch-btn{
+display:inline-block;
+margin-top:30px;
+background:#1166dc;
+color:#fff;
+padding:14px 35px;
+border-radius:50px;
+font-size:22px;
+font-weight:700;
+transition:.3s;
+}
+.watch-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(17,102,220,.45);
+}
+
+::-webkit-scrollbar{
       width:10px;
     }
 
@@ -267,9 +294,7 @@
 
   <div class="hero-content">
 
-    <div class="hero-logo">
-      <img src="" alt="">
-    </div>
+    
 
     <div class="hero-text">
 
@@ -279,8 +304,10 @@
       <div class="line"></div>
 
       <p>
-        السلسلة مدبلجة مع ترجمة الحلقات المفقودة او اللتي لم تدبلج
+        السلسلة مدبلجة بالكامل مع ترجمة الحلقات المفقودة التي لم تُدبلج.
       </p>
+
+      <a href="#season1" class="watch-btn">ابدأ المشاهدة</a>
 
     </div>
 
@@ -296,7 +323,7 @@
 
 <section class="season">
 
-  <h2 class="season-title">الموسم الأول</h2>
+  <h2 id="season1" class="season-title">الموسم الأول</h2>
 
   <div class="episodes">
 
