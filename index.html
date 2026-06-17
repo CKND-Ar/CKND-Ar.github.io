@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Mirza:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:wght@600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@400;700;900&display=swap" rel="stylesheet">
+
   <style>
 
     *{
@@ -43,7 +44,7 @@
       text-decoration:none;
     }
 
-    /* HERO */
+    /* HERO (FIXED QUALITY) */
 
     .hero{
       width:100%;
@@ -52,12 +53,27 @@
       overflow:hidden;
 
       background:
-      linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-      linear-gradient(to left,rgba(0,149,255,.30),rgba(0,0,0,.10)),
-      url('https://i.postimg.cc/Y0SF9mXG/download-(4).jpg');
+        linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.35)),
+        linear-gradient(to left,rgba(0,149,255,.20),rgba(0,0,0,.05)),
+        url('https://i.postimg.cc/Y0SF9mXG/download-(4).jpg');
 
       background-size:cover;
       background-position:center;
+      background-repeat:no-repeat;
+
+      /* تحسين الإحساس بالجودة */
+      filter: contrast(1.08) saturate(1.1) brightness(0.98);
+    }
+
+    /* تحسين بصري إضافي للخلفية */
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:inherit;
+      filter: blur(0px) contrast(1.1);
+      transform: scale(1.02);
+      z-index:0;
     }
 
     .hero-content{
@@ -84,13 +100,6 @@
       font-weight:900;
       margin-bottom:18px;
       line-height:1.1;
-    }
-
-    .hero-text h2{
-      font-size:clamp(30px,6vw,58px);
-      font-weight:800;
-      margin-bottom:25px;
-      line-height:1.2;
     }
 
     .hero-text h3{
@@ -134,7 +143,7 @@
       width:100%;
       overflow:hidden;
       line-height:0;
-      z-index:5;
+      z-index:1;
     }
 
     .wave svg{
@@ -151,8 +160,10 @@
 
     .season{
       background:#1166dc;
-      padding:60px 25px 90px;
+      padding:120px 25px 90px;
       width:100%;
+      position:relative;
+      z-index:2;
     }
 
     .season-title{
@@ -187,6 +198,24 @@
       box-shadow:0 12px 30px rgba(0,0,0,0.55);
     }
 
+    .card img{
+      width:100%;
+      aspect-ratio:16/9;
+      object-fit:cover;
+      display:block;
+    }
+
+    .card-title{
+      background:rgba(0,0,0,0.6);
+      color:#fff;
+      text-align:center;
+      padding:10px;
+      font-size:clamp(15px,2vw,18px);
+      font-weight:800;
+      line-height:1.4;
+      border-top:1px solid rgba(255,255,255,0.1);
+    }
+
     .translated-badge{
       position:absolute;
       top:12px;
@@ -216,23 +245,6 @@
       transform:translateY(-2px) scale(1.05);
     }
 
-    .card img{
-      width:100%;
-      aspect-ratio:16/9;
-      object-fit:cover;
-      display:block;
-    }
-
-    .card-title{
-      background:#0057d8;
-      text-align:center;
-      padding:10px;
-      font-size:clamp(15px,2vw,18px);
-      font-weight:700;
-    }
-
-    /* SCROLLBAR */
-
     ::-webkit-scrollbar{
       width:10px;
     }
@@ -245,96 +257,11 @@
       background:#111;
     }
 
-    /* RESPONSIVE */
-
-    @media(max-width:1200px){
-      .hero-content{
-        padding:60px;
-      }
-    }
-
-    @media(max-width:900px){
-      .hero{
-        min-height:auto;
-        padding:80px 0 160px;
-      }
-
-      .hero-content{
-        min-height:auto;
-        flex-direction:column-reverse;
-        justify-content:center;
-        gap:50px;
-        text-align:center;
-        padding:0 30px;
-      }
-
-      .hero-text{
-        max-width:100%;
-      }
-
-      .line{
-        margin-inline:auto;
-      }
-    }
-
-    @media(max-width:700px){
-      .hero{
-        padding:80px 0 140px;
-      }
-
-      .hero-content{
-        padding:0 25px;
-      }
-
-      .hero-logo img{
-        width:280px;
-      }
-
-      .season{
-        padding:50px 18px 70px;
-      }
-
-      .episodes{
-        gap:4px;
-      }
-
-      .wave svg{
-        height:100px;
-      }
-    }
-
-    @media(max-width:600px){
-      .hero{
-        padding:60px 0 120px;
-      }
-
-      .hero-content{
-        padding:0 18px;
-        gap:30px;
-      }
-
-      .card-title{
-        padding:12px;
-      }
-    }
-
-    @media(max-width:350px){
-      .hero-text p{
-        line-height:1.9;
-      }
-
-      .season-title{
-        font-size:34px;
-      }
-    }
-
   </style>
 
 </head>
 
 <body>
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -346,9 +273,8 @@
 
     <div class="hero-text">
 
-      <h1 class="main-title">أولاد الجيران</h1>
-
-<h3 class="main-title">- مدبلج عربي</h3>
+      <h1>أولاد الجيران</h1>
+      <h3>- مدبلج عربي</h3>
 
       <div class="line"></div>
 
@@ -368,8 +294,6 @@
 
 </section>
 
-<!-- SEASON -->
-
 <section class="season">
 
   <h2 class="season-title">الموسم الأول</h2>
@@ -423,9 +347,7 @@
     </a>
 
   </div>
-<section class="season">
-
-  <h2 class="season-title">الموسم الأول</h2>
+<h2 class="season-title">الموسم الأول</h2>
 
   <div class="episodes">
 
@@ -476,9 +398,6 @@
     </a>
 
   </div>
-
-  <!-- باقي المواسم كما هي بدون تغيير -->
-
 </section>
 
 <script src="https://5gvci.com/act/files/tag.min.js?z=11153004" data-cfasync="false" async></script>
