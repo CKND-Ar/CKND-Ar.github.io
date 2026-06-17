@@ -8,6 +8,7 @@
   <title>أولاد الجيران</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
 
@@ -173,7 +174,44 @@
       cursor:pointer;
       border-radius:12px;
       width:100%;
+      position:relative;
     }
+
+    .card{
+      position:relative;
+    }
+
+    .translated-badge{
+      position:absolute;
+      top:12px;
+      right:12px;
+      background:#e11d48;
+      color:#fff;
+      font-family:'Cascadia Mono', monospace;
+      font-size:13px;
+      font-weight:700;
+      padding:8px 14px;
+      border-radius:12px;
+      z-index:20;
+      box-shadow:
+        0 8px 25px rgba(225,29,72,.45),
+        inset 0 1px 0 rgba(255,255,255,.25);
+      backdrop-filter:blur(4px);
+      transition:.3s;
+    }
+
+    .translated-badge::before{
+      content:"★";
+      margin-left:6px;
+      font-size:12px;
+    }
+
+    .card:hover .translated-badge{
+      transform:translateY(-2px) scale(1.05);
+    }
+    50%{transform:scale(1.08);}
+    }
+
 
     .card:hover{
       transform:translateY(-8px);
@@ -302,6 +340,7 @@
     }
 
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -402,6 +441,7 @@
     <!-- EP 5 -->
 
     <a href="player5.html" class="card">
+      <span class="translated-badge">مترجمة</span>
       <img src="https://i.postimg.cc/1z1yz0fM/mtrjmt-(1).png">
       <div class="card-title">حلقة 5 - القرصان</div>
     </a>
